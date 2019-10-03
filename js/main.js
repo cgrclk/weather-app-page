@@ -15,7 +15,6 @@ jQuery(document).ready(function () {
 
 	$('.menu-mobil .drop .caret').each(function () {
 		$(this).on('click', function () {
-			console.log('deneme');
 			var subMenu = $(this).next('.sub-menu');
 			subMenu.toggleClass('active');
 			if (subMenu.hasClass('active')) {
