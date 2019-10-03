@@ -1,0 +1,214 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='theme-color', content='#648cff')
+        title Weather App
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', type='text/css', href='./css/swiper.min.css')
+        link(rel='stylesheet', type='text/css', href='./css/main.css')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap')
+    body
+        div(class='container-fluid')
+            div(class='header')
+                div(class='container')
+                    div(class='container-inner')
+                        div(class='logo col col-3 col-md-4 col-sm-5 col-xs-10')
+                            a(href='#')='Fun Weather.'
+                        div(class='menu col col-7')
+                            ul
+                                each val, index in {1:'Home',2:'Features',3:'Reviews', 4:'Download'}
+                                    if (index % 4 === 1)
+                                        li(class='active drop')
+                                            a(href='#')=val
+                                                span(class='caret')
+                                            ul(class='sub-menu')
+                                                each val, index in {1:'Sub Menu 1',2:'Sub Menu 2',3:'Sub Menu 3'}
+                                                    li
+                                                        a(href='#')=val
+                                    else
+                                        li
+                                            a(href='#')=val
+
+                        div(class='mobilNavConatiner disable')
+                            div(class='navInner')
+                                div(class='menuWrapper')
+                                    div(class='navMobil')
+                                        ul(class='menu-mobil')
+                                            each val, index in {1:'Home',2:'Features',3:'Reviews', 4:'Download'}
+                                                if (index % 4 === 1)
+                                                    li(class='active drop')
+                                                        a(href='#')=val
+                                                        ul(class='sub-menu')
+                                                            each val, index in {1:'Sub Menu 1',2:'Sub Menu 2',3:'Sub Menu 3'}
+                                                                li
+                                                                    a(href='#')=val
+                                                else
+                                                    li
+                                                        a(href='#')=val
+                            a(href='#', class='mobile-close')
+                                span
+                                    svg(x="0px", y="0px", width="54px", height="54px", viewBox="0 0 54 54")
+                                        circle(fill="transparent", stroke="#656e79", stroke-width="1", cx="27", cy="27", r="25", stroke-dasharray="157 157", stroke-dashoffset="157")
+
+                        a(href='#', class='mobile-trigger', id='res-trigger')
+                            span
+                            span
+                            span
+                        div(class='social col col-2 col-md-3 col-sm-4 col-xs-12')
+                            ul
+                                each val, index in {1:'facebook',2:'instagram',3:'twitter'}
+                                    li(class=val)
+                                        a(href='#')
+                                            img(src='./img/'+ val + '.png')
+                        div(class='clear')
+
+                        div(class='featured')
+                            div(class='content-left col col-6 col-xs-12 animated fadeInLeft')
+                                div(class='head')='Get the most fun weather app'
+                                p Simple, nice and user-friendly application of the <br> weather. Only useful information
+                                a(href='#', class='btn orange')='Download'
+                                a(href='#', class='btn')='Features'
+                            div(class='content-right col col-6 col-xs-12 animated fadeInRight')
+                                img(src='./img/phone.png')
+                                each val, index in {1:'celcius',2:'london',3:'rio',4:'sunny'}
+                                    if (index % 4 === 1)
+                                        span(class=val + ' circle')='9˚'
+                                    else
+                                        span(class=val + ' circle')=val
+                        div(class='clear')
+                div(class='wave-outer')
+                    div(class='wave')
+                    div(class='scrollHead')
+
+            div(class='header-bottom')
+                div
+
+            div(id='row1' class='features')
+                div(class='container')
+                    div(class='main-title wow animated fadeInUp')
+                        h3 PERFECT FEATURES
+                        span(class='sub-title') Only necessary
+                    div(class='row')
+                        - var features =[{ "name":"Usability", "image": "usability", "content": "Sometimes the simplest things are the hardest to find. So we created a new line for everyday life" }, { "name": "Parallax Effect", "image": "parallax", "content": "Sometimes the simplest things are the hardest to find. So we created a new line for everyday life" }, { "name": "Unlimites Colors", "image": "unlimited-colors", "content": "Sometimes the simplest things are the hardest to find. So we created a new line for everyday life" }]
+                        each feature in features
+                            div(class='col col-4 col-xs-12 wow animated fadeInUp')
+                                div(class='left')
+                                    img(src='./img/'+ feature.image + '.png', alt=feature.name)
+                                div(class='right')
+                                    h4=feature.name
+                                    p=feature.content
+                    div(class='clear')
+
+
+            div(id='row2' class='simple-widgets')
+                div(class='container')
+                    div(class='main-title wow animated fadeInUp')
+                        h3 SIMPLE WIDGETS
+                        span(class='sub-title') Drag and Drop
+
+                    div(class='swiper-container')
+                        div(class='swiper-wrapper')
+                            div(class='swiper-slide')
+                                div(class='slider-image')
+                                    img(src='./img/widget-2.jpg')
+                            div(class='swiper-slide')
+                                div(class='slider-image')
+                                    img(src='./img/widget-1.jpg')
+                            div(class='swiper-slide')
+                                div(class='slider-image')
+                                    img(src='./img/widget-3.jpg')
+                        <!-- Add Arrows -->
+                        div(class='swiper-button-next')
+                        div(class='swiper-button-prev')
+
+
+            div(id='row3' class='screenshots')
+                div(class='container')
+                    div(class='main-title wow animated fadeInUp')
+                        h3 SCREENSHOTS
+                        span(class='sub-title') The brightest images
+
+                    - var screenshots =[{ "name":"WHEN THE CLOUDS", "class":" cloudy", "image1": "phone-s-1", "image2": "text-1", "image3": "s-1", "circle1": "Cloudy", "circle2": "15˚", "content": "Variable information on the air humidity, the feeling of the weather, and the ability to share this with your friends" }, { "name":"WHEN THE SUN", "class":" sunny", "image1": "phone-s-2", "image2": "text-2", "image3": "s-2", "circle1": "Sunny", "circle2": "35˚", "content": "Sometimes the simplest things are the hardest to find. So we created a new line for everyday life." }, { "name":"WHEN THE RAIN", "class":" rainy", "image1": "phone-s-3", "image2": "text-3", "image3": "s-3", "circle1": "Rainy", "circle2": "9˚", "content": "Sometimes the simplest things are the hardest to find. So we created a new line for everyday life." }]
+                    each screenshot, index in screenshots
+                        if (index % 3 === 1)
+                            - var rowClass = 'row change-order-onload'
+                        else
+                            - var rowClass = 'row change-order'
+
+                        div(class=rowClass + screenshot.class)
+                            div(class='col col-left col-5 col-md-6 col-sm-12 wow animated fadeInUp', data-wow-delay='250ms')
+                                div(class='col-left-inner')
+                                    img(class='main-s' src='./img/'+ screenshot.image1 +'.png')
+
+                                    div(class='circle cloudy')=screenshot.circle1
+                                    div(class='circle celcius')=screenshot.circle2
+                                    div(class='bg-img')
+                                        img(src='./img/'+ screenshot.image2 +'.png')
+                            div(class='col col-right col-6 col-md-6 offset-1 col-lg-7 col-sm-12 wow animated fadeInUp', data-wow-delay='500ms')
+                                img(src='./img/'+ screenshot.image3 +'.png')
+                                div(class='s-title')=screenshot.name
+                                p=screenshot.content
+
+                                ul(class='circles-list')
+                                    li 95%
+                                    li 9˚
+                                    li Rainy
+                                    div(class='clear')
+                            div(class='clear')
+
+            div(id='row4' class='reviews')
+                div(class='container')
+                    div(class='main-title wow animated fadeInUp')
+                        h3 WHAT PEOPLE ARE SAYING
+                        span(class='sub-title') Reviews
+                    div(class='row')
+                        - var reviews =[{ "name":"John Updike", "content": "What art offers is space - a certain breathing room for the spirit." }, { "name":"William Hazlitt", "content": "We do not see nature with our eyes, but with our understandings and our hearts." },{ "name":"Mignon McLaughlin", "content": "The only courage that matters is the kind that gets you from one moment to the next." }, { "name":"Abraham Lincoln", "content": "No man has a good enough memory to be a successful liar." }]
+                        each review in reviews
+                            div(class='col col-6 col-sm-12 review-box wow fadeInUp animated')=review.content
+                                span=review.name
+                        div(class='clear')
+
+            div(id='row5' class='how-download')
+                div(class='container')
+                    div(class='col col-6 col-md-12 col-left wow animated fadeInLeft')
+                        div(class='head')='How Download the app?'
+                        p Just download the app from the store. Simple, nice and user-friendly application of theweather. Only relevant and useful information.
+                        a(href='#', class='btn app-store')
+                        a(href='#', class='btn play-store')
+                    div(class='col-right')
+                    div(class='clear')
+
+            div(class='footer')
+                div(class='container')
+                    div(class='container-top')
+                        div(class='logo-footer col col-3 col-md-4 col-sm-12')
+                            a(href='#') Fun
+                                span  Weather.
+                        div(class='menu-footer col col-7 col-md-8 col-sm-12')
+                            ul
+                                each val, index in {1:'Home',2:'Features',3:'Reviews', 4:'Download'}
+                                    if (index % 4 === 1)
+                                        li(class='active')
+                                            a(href='#')=val
+                                    else
+                                        li
+                                            a(href='#')=val
+                        div(class='social-footer col col-2 col-md-12')
+                            ul
+                                each val in {1:'facebook',2:'instagram',3:'twitter'}
+                                    li(class=val)
+                                        a(href='#')
+                                            img(src='./img/' + val + '.png')
+                        div(class='clear')
+                    div(class='container-bottom')
+                        p © 2016 All rights reserved. Weather App Theme by Gravpix
+                        div(class='clear')
+                div(class='back-to-top')
+                    img(src='./img/back-to.png')
+
+
+    script(src='./js/jquery-3.4.1.min.js', type='text/javascript')
+    script(src='./js/wow.min.js', type='text/javascript')
+    script(src='./js/swiper.min.js', type='text/javascript')
+    script(src='./js/main.js', type='text/javascript')

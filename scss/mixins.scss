@@ -1,0 +1,22 @@
+/* @include transition(all,2s,ease-out); */
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+  -webkit-transition: $what $time $how;
+  -moz-transition: $what $time $how;
+  -ms-transition: $what $time $how;
+  -o-transition: $what $time $how;
+  transition: $what $time $how;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin text-shadow($a, $b, $c, $color) {
+  text-shadow: $a $b $c $color;
+  -moz-text-shadow: $a $b $c $color;
+  -ms-text-shadow: $a $b $c $color;
+  -o-text-shadow: $a $b $c $color;
+  -webkit-text-shadow: $a $b $c $color;
+}
