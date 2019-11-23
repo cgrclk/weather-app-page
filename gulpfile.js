@@ -17,7 +17,7 @@ gulp.task('css', function () {
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('./css'))
 });
-//Test
+//Test 1
 gulp.task('watch', function () {
 	gulp.watch('./scss/*.scss', gulp.series('css'));
 	gulp.watch('./*.pug', gulp.series('html'));
